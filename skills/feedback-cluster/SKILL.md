@@ -11,11 +11,11 @@
 | 复杂度 | `S` |
 | 阶段 | `P1` |
 | 复用度 | 高 |
-| 资产形态 | 纯提示词（无运行时依赖） |
+| 资产形态 | 提示词 + 确定性脚本（纯标准库） |
 
 ## 能力描述
 
-语义去重与主题聚类
+对一批用户反馈条目做语义去重与主题聚类：把表达同一诉求的条目归并为一组，输出分组结果（主题、包含条目、频次）、按频次降序的共性洞察，以及每条洞察对应的原始条目编号证据索引。适用于从应用商店评论、客服工单、社群讨论中快速识别集中诉求。配套确定性脚本（关键词聚类口径，纯标准库）可在本地复现聚类结果，产物写入 `out/`（clusters.csv / report.json）。
 
 ## 输入规格
 
@@ -49,6 +49,12 @@
 | **Dify** | 新建应用 → 提示词编排 → 粘贴 `prompt.txt` |
 | **Claude** | 新建 Project → Instructions → 粘贴 `prompt.txt` |
 | **ChatGPT** | 新建 GPT → Instructions → 粘贴 `prompt.txt` |
+
+### 方式三：运行确定性脚本（可复现）
+
+1. 进入本技能目录，执行：`python scripts/cluster.py --demo`（内置演示数据）或 `python scripts/cluster.py --input examples/input.json`
+2. 脚本按关键词聚类口径归组（条目命中主题关键词即归入，可跨主题；未命中归入「其他 / 未分类」），主题与洞察按频次降序排列
+3. 产物写入 `out/`：`clusters.csv`（分组结果）、`report.json`（clusters / insights / evidence 完整结构）
 
 ## 边界（不做的事）
 

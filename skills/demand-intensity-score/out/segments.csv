@@ -1,0 +1,5 @@
+﻿tier,threshold,count,ratio,action,members
+S,≥8.0,1,25%,本迭代优先做,R01
+A,6.0-7.9,0,0%,排期做,
+B,4.0-5.9,0,0%,观察,
+C,<0.0,3,75%,暂缓,R02 R03 R04

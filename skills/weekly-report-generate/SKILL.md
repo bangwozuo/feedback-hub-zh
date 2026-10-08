@@ -11,11 +11,11 @@
 | 复杂度 | `S` |
 | 阶段 | `P1` |
 | 复用度 | 高（#1 周报复用） |
-| 资产形态 | 纯提示词（无运行时依赖） |
+| 资产形态 | 提示词 + 确定性脚本（纯标准库） |
 
 ## 能力描述
 
-反馈数据汇总为决策周报
+把本期与上期的反馈指标数据汇总为决策者可直接阅读的周报：核心结论先行（一句话点出变化最突出的指标及幅度），关键指标表逐行列出本期/上期/变化（变化率 = 变化量 ÷ |上期| × 100%，保留 1 位小数，符号翻转标注「由正转负」），驱动因素只列变化超 ±10% 的指标并附数据支撑，行动建议每条含动作、对象与时间要求。配套确定性脚本（纯标准库）可在本地复现计算，产物写入 `out/`（metrics_summary.csv / weekly_report.json）。
 
 ## 输入规格
 
@@ -50,6 +50,12 @@
 | **Dify** | 新建应用 → 提示词编排 → 粘贴 `prompt.txt` |
 | **Claude** | 新建 Project → Instructions → 粘贴 `prompt.txt` |
 | **ChatGPT** | 新建 GPT → Instructions → 粘贴 `prompt.txt` |
+
+### 方式三：运行确定性脚本（可复现）
+
+1. 进入本技能目录，执行：`python scripts/report.py --demo`（内置演示数据）或 `python scripts/report.py --input examples/input.json`
+2. 脚本按固定口径计算（变化率 = 变化量 ÷ |上期| × 100%，保留 1 位小数；符号翻转单独标注；驱动因素只列变化超 ±10% 的指标）
+3. 产物写入 `out/`：`metrics_summary.csv`（指标对比明细）、`weekly_report.json`（headline / metrics_summary / drivers / suggestion 完整结构）
 
 ## 边界（不做的事）
 

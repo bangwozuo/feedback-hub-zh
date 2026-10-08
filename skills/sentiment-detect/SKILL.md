@@ -11,11 +11,11 @@
 | 复杂度 | `M` |
 | 阶段 | `P1` |
 | 复用度 | 极高（#2/#6 共用） |
-| 资产形态 | 纯提示词（无运行时依赖） |
+| 资产形态 | 提示词 + 确定性脚本（纯标准库） |
 
 ## 能力描述
 
-同 4.4.2-S7
+按给定分类体系（缺省为正面 / 负面 / 中性三类）对反馈条目逐条情绪打标：每条给出类别与可在原文中指认的判定依据，统计各类数量与占比（占比 = 类别条数 ÷ 总数 × 100%），正负面表达并存或仅隐含情绪的条目单独列入存疑项。配套确定性脚本（情绪词表口径，纯标准库）可在本地复现打标结果，产物写入 `out/`（labeled.csv / distribution.csv / report.json）。
 
 ## 输入规格
 
@@ -49,6 +49,12 @@
 | **Dify** | 新建应用 → 提示词编排 → 粘贴 `prompt.txt` |
 | **Claude** | 新建 Project → Instructions → 粘贴 `prompt.txt` |
 | **ChatGPT** | 新建 GPT → Instructions → 粘贴 `prompt.txt` |
+
+### 方式三：运行确定性脚本（可复现）
+
+1. 进入本技能目录，执行：`python scripts/sentiment.py --demo`（内置演示数据）或 `python scripts/sentiment.py --input examples/input.json`
+2. 脚本按情绪词表口径打标（负面 15 词 / 正面 10 词，可自定义覆盖），正负面同时命中计入存疑项，均未命中归中性
+3. 产物写入 `out/`：`labeled.csv`（逐条打标）、`distribution.csv`（分布统计）、`report.json`（labeled / distribution / ambiguous 完整结构）
 
 ## 边界（不做的事）
 

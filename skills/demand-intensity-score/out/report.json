@@ -1,0 +1,101 @@
+{
+  "scores": [
+    {
+      "id": "R01",
+      "name": "发票拍照自动识别金额与抬头",
+      "mentions": 47,
+      "willing": 18,
+      "sample": 60,
+      "churn": 5,
+      "freq_score": 10,
+      "willing_score": 6,
+      "churn_score": 8,
+      "total": 8.1,
+      "tier": "S"
+    },
+    {
+      "id": "R02",
+      "name": "多账本切换",
+      "mentions": 26,
+      "willing": 8,
+      "sample": 60,
+      "churn": 0,
+      "freq_score": 6,
+      "willing_score": 3,
+      "churn_score": 1,
+      "total": 3.7,
+      "tier": "C"
+    },
+    {
+      "id": "R03",
+      "name": "月度经营报表导出Excel",
+      "mentions": 15,
+      "willing": 11,
+      "sample": 60,
+      "churn": 2,
+      "freq_score": 3,
+      "willing_score": 4,
+      "churn_score": 3,
+      "total": 3.4,
+      "tier": "C"
+    },
+    {
+      "id": "R04",
+      "name": "深色模式",
+      "mentions": 22,
+      "willing": 3,
+      "sample": 60,
+      "churn": 1,
+      "freq_score": 5,
+      "willing_score": 1,
+      "churn_score": 2,
+      "total": 2.9,
+      "tier": "C"
+    }
+  ],
+  "segments": [
+    {
+      "tier": "S",
+      "threshold": "≥8.0",
+      "count": 1,
+      "ratio": "25%",
+      "action": "本迭代优先做",
+      "members": [
+        "R01"
+      ]
+    },
+    {
+      "tier": "A",
+      "threshold": "6.0-7.9",
+      "count": 0,
+      "ratio": "0%",
+      "action": "排期做",
+      "members": []
+    },
+    {
+      "tier": "B",
+      "threshold": "4.0-5.9",
+      "count": 0,
+      "ratio": "0%",
+      "action": "观察",
+      "members": []
+    },
+    {
+      "tier": "C",
+      "threshold": "<0.0",
+      "count": 3,
+      "ratio": "75%",
+      "action": "暂缓",
+      "members": [
+        "R02",
+        "R03",
+        "R04"
+      ]
+    }
+  ],
+  "assumption": [
+    "维度权重采用默认口径：频次 40%、付费意愿 35%、流失风险 25%，各维度按 1-10 分打分后加权求和。",
+    "频次分按 30 天提及次数相对最大值映射（最大值记 10 分）；付费分按愿付人数占比映射（占比 30% 记 6 分）；流失分按明确流失表态人数映射（每人 1.6 分）。",
+    "分层阈值采用默认口径：总分 ≥8.0 为 S 级、6.0-7.9 为 A 级、4.0-5.9 为 B 级、<4.0 为 C 级；阈值为给定假设，不代表唯一正解，结果供排序参考。"
+  ]
+}
