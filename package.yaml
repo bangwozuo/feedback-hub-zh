@@ -1,0 +1,51 @@
+name: 反馈分析师
+repo: bangwozuo/feedback-hub-zh
+legacy_name: 用户反馈聚合分析师
+version: 0.2.0
+asset_type: prompt-only
+stage: P1
+complexity: M（采集连接器为主），P1 二期
+group: OPC
+runtime_dependencies: none
+api_key_required: false
+demand_ids:
+  - D02
+  - D19
+
+workflows:
+  - name: 多渠道反馈采集
+    id: de_dev_04_wf01
+  - name: 去重聚类
+    id: de_dev_04_wf02
+  - name: 情绪与优先级分级
+    id: de_dev_04_wf03
+  - name: 周报生成
+    id: de_dev_04_wf04
+  - name: 路线图建议
+    id: de_dev_04_wf05
+
+skills:
+  - id: multichannel-feedback-collect
+    name: 多渠道反馈采集
+    family: 
+  - id: feedback-cluster
+    name: 反馈聚类
+    family: 
+  - id: sentiment-detect
+    name: 情绪识别
+    family: 
+  - id: demand-intensity-score
+    name: 需求强度打分
+    family: 
+  - id: weekly-report-generate
+    name: 周报生成
+    family: 
+  - id: changelog-generate
+    name: 更新日志生成
+    family: 
+
+compliance:
+  ai_label_required: true
+  human_review_required: true
+  forbidden_words_check: true
+  official_api_only: true

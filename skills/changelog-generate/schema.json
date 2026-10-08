@@ -1,0 +1,58 @@
+{
+  "skill_id": "de_dev_04_sk06",
+  "name": "更新日志生成",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": [
+      "subject"
+    ],
+    "properties": {
+      "subject": {
+        "type": "string",
+        "description": "主体信息：适用于谁、什么产品/主体"
+      },
+      "scope": {
+        "type": "string",
+        "description": "覆盖范围：需要覆盖哪些条款/内容（可选）"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "document",
+      "placeholder",
+      "disclaimer"
+    ],
+    "properties": {
+      "document": {
+        "type": "string",
+        "description": "条款化、分条编号的完整文本"
+      },
+      "placeholder": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "需要用户补充的具体信息（公司名、联系方式等）"
+      },
+      "disclaimer": {
+        "type": "string",
+        "description": "需法务或专业机构复核的说明"
+      }
+    },
+    "x-rendered-from": "capability:generate_doc"
+  },
+  "constraints": {
+    "max_input_length": 5000,
+    "forbidden_words": [
+      "最好",
+      "第一",
+      "100%"
+    ],
+    "ai_label_required": true,
+    "human_review_required": true,
+    "external_api_required": false
+  }
+}

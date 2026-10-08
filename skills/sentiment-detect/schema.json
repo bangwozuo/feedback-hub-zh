@@ -1,0 +1,89 @@
+{
+  "skill_id": "de_dev_04_sk03",
+  "name": "情绪识别",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": [
+      "items"
+    ],
+    "properties": {
+      "items": {
+        "type": "string",
+        "description": "待分类条目：需要打标的条目集合"
+      },
+      "taxonomy": {
+        "type": "string",
+        "description": "分类体系：类别定义与判定标准（可选，缺省由你提出）"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "labeled",
+      "distribution",
+      "ambiguous"
+    ],
+    "properties": {
+      "labeled": {
+        "type": "array",
+        "description": "逐条给出类别与依据",
+        "items": {
+          "type": "object",
+          "properties": {
+            "#": {
+              "type": "string"
+            },
+            "条目": {
+              "type": "string"
+            },
+            "类别": {
+              "type": "string"
+            },
+            "判定依据": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "distribution": {
+        "type": "array",
+        "description": "各类别数量与占比",
+        "items": {
+          "type": "object",
+          "properties": {
+            "类别": {
+              "type": "string"
+            },
+            "数量": {
+              "type": "string"
+            },
+            "占比": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ambiguous": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "跨类或无法判定的条目及原因"
+      }
+    },
+    "x-rendered-from": "capability:classify"
+  },
+  "constraints": {
+    "max_input_length": 5000,
+    "forbidden_words": [
+      "最好",
+      "第一",
+      "100%"
+    ],
+    "ai_label_required": true,
+    "human_review_required": true,
+    "external_api_required": false
+  }
+}
