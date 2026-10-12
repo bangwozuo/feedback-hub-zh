@@ -4,8 +4,7 @@
 
 ![反馈分析师 · 动态演示](docs/assets/hero.gif)
 
-*▲ 实时演示（自动循环）· [▶ 观看完整版合集视频](docs/demo.mp4)*
-
+*▲ 真实执行录播（自动循环播放）· [▶ 观看完整版合集视频](docs/demo.mp4)*
 
 [![Stage](https://img.shields.io/badge/stage-P1-orange)](https://github.com/bangwozuo)
 [![Asset](https://img.shields.io/badge/asset-prompt--only-blueviolet)](#资产形态)
@@ -114,11 +113,11 @@ feedback-hub-zh/
 | # | 技能 | 能力族 | 复杂度 | 提示词 | 文档 |
 |---|------|--------|--------|--------|------|
 | 1 | 多渠道反馈采集 | 数据采集 | `M` | [prompt.txt](skills/multichannel-feedback-collect/prompt.txt) | [docs](skills/multichannel-feedback-collect/docs/) |
-| 2 | 反馈聚类 | 摘要提炼 | `S` | [prompt.txt](skills/feedback-cluster/prompt.txt) | [docs](skills/feedback-cluster/docs/) |
+| 2 | 反馈聚类 | 摘要与聚类 | `S` | [prompt.txt](skills/feedback-cluster/prompt.txt) | [docs](skills/feedback-cluster/docs/) |
 | 3 | 情绪识别 | 分类打标 | `M` | [prompt.txt](skills/sentiment-detect/prompt.txt) | [docs](skills/sentiment-detect/docs/) |
-| 4 | 需求强度打分 | — | `S` | [prompt.txt](skills/demand-intensity-score/prompt.txt) | [docs](skills/demand-intensity-score/docs/) |
-| 5 | 周报生成 | 报告简报 | `S` | [prompt.txt](skills/weekly-report-generate/prompt.txt) | [docs](skills/weekly-report-generate/docs/) |
-| 6 | 更新日志生成 | — | `S` | [prompt.txt](skills/changelog-generate/prompt.txt) | [docs](skills/changelog-generate/docs/) |
+| 4 | 需求强度打分 | 打分与分层 | `S` | [prompt.txt](skills/demand-intensity-score/prompt.txt) | [docs](skills/demand-intensity-score/docs/) |
+| 5 | 周报生成 | 报告与简报 | `S` | [prompt.txt](skills/weekly-report-generate/prompt.txt) | [docs](skills/weekly-report-generate/docs/) |
+| 6 | 更新日志生成 | 制度与协议文本 | `S` | [prompt.txt](skills/changelog-generate/prompt.txt) | [docs](skills/changelog-generate/docs/) |
 
 ## 工作流清单（5 条）
 
