@@ -110,24 +110,24 @@ feedback-hub-zh/
 
 ## 技能清单（6 个）
 
-| # | 技能 | 能力族 | 复杂度 | 提示词 | 文档 |
-|---|------|--------|--------|--------|------|
-| 1 | 多渠道反馈采集 | 数据采集 | `M` | [prompt.txt](skills/multichannel-feedback-collect/prompt.txt) | [docs](skills/multichannel-feedback-collect/docs/) |
-| 2 | 反馈聚类 | 摘要与聚类 | `S` | [prompt.txt](skills/feedback-cluster/prompt.txt) | [docs](skills/feedback-cluster/docs/) |
-| 3 | 情绪识别 | 分类打标 | `M` | [prompt.txt](skills/sentiment-detect/prompt.txt) | [docs](skills/sentiment-detect/docs/) |
-| 4 | 需求强度打分 | 打分与分层 | `S` | [prompt.txt](skills/demand-intensity-score/prompt.txt) | [docs](skills/demand-intensity-score/docs/) |
-| 5 | 周报生成 | 报告与简报 | `S` | [prompt.txt](skills/weekly-report-generate/prompt.txt) | [docs](skills/weekly-report-generate/docs/) |
-| 6 | 更新日志生成 | 制度与协议文本 | `S` | [prompt.txt](skills/changelog-generate/prompt.txt) | [docs](skills/changelog-generate/docs/) |
+| # | 技能 | 能力族 | 复杂度 | 说明文档 |
+|---|------|--------|--------|----------|
+| 1 | 多渠道反馈采集 | 数据采集 | `M` | [README](skills/multichannel-feedback-collect/README.md) |
+| 2 | 反馈聚类 | 摘要与聚类 | `S` | [README](skills/feedback-cluster/README.md) |
+| 3 | 情绪识别 | 分类打标 | `M` | [README](skills/sentiment-detect/README.md) |
+| 4 | 需求强度打分 | 打分与分层 | `S` | [README](skills/demand-intensity-score/README.md) |
+| 5 | 周报生成 | 报告与简报 | `S` | [README](skills/weekly-report-generate/README.md) |
+| 6 | 更新日志生成 | 制度与协议文本 | `S` | [README](skills/changelog-generate/README.md) |
 
 ## 工作流清单（5 条）
 
-| # | 工作流 | 阶段 | 复杂度 | 触发 | 定义 | 文档 |
-|---|--------|------|--------|------|------|------|
-| 1 | 多渠道反馈采集 | `P1` | `M` | 定时（每日） | [SKILL.md](workflows/feedback-multichannel-collect-flow/SKILL.md) | [docs](workflows/feedback-multichannel-collect-flow/docs/) |
-| 2 | 去重聚类 | `P1` | `S` | 事件（采集后） | [SKILL.md](workflows/dedup-cluster-flow/SKILL.md) | [docs](workflows/dedup-cluster-flow/docs/) |
-| 3 | 情绪与优先级分级 | `P1` | `S` | 事件（聚类后） | [SKILL.md](workflows/sentiment-priority-grading-flow/SKILL.md) | [docs](workflows/sentiment-priority-grading-flow/docs/) |
-| 4 | 周报生成 | `P1` | `S` | 定时（每周一） | [SKILL.md](workflows/weekly-report-flow/SKILL.md) | [docs](workflows/weekly-report-flow/docs/) |
-| 5 | 路线图建议 | `P2` | `S` | 定时（每月） | [SKILL.md](workflows/roadmap-advice-flow/SKILL.md) | [docs](workflows/roadmap-advice-flow/docs/) |
+| # | 工作流 | 阶段 | 复杂度 | 触发 | 说明文档 |
+|---|--------|------|--------|------|----------|
+| 1 | 多渠道反馈采集 | `P1` | `M` | 定时（每日） | [README](workflows/feedback-multichannel-collect-flow/README.md) |
+| 2 | 去重聚类 | `P1` | `S` | 事件（采集后） | [README](workflows/dedup-cluster-flow/README.md) |
+| 3 | 情绪与优先级分级 | `P1` | `S` | 事件（聚类后） | [README](workflows/sentiment-priority-grading-flow/README.md) |
+| 4 | 周报生成 | `P1` | `S` | 定时（每周一） | [README](workflows/weekly-report-flow/README.md) |
+| 5 | 路线图建议 | `P2` | `S` | 定时（每月） | [README](workflows/roadmap-advice-flow/README.md) |
 
 ---
 
